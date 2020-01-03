@@ -8,15 +8,11 @@ var style = {
     color:"white"
 }
 
-const title = React.createElement(
-    "h1",
-    {
-        id:"title",
-        className:"title",
-        style:style
-    },
 
-    "Hello World"
-);
 
-ReactDOM.render(title, document.getElementById('root'));
+ReactDOM.render(
+    <div style={style}>
+        <h1 id ="heading-element">Hello World</h1>
+        <p>Glad you're here</p>
+    </div>,
+    document.getElementById('root'));
