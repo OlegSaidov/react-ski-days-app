@@ -9,6 +9,13 @@ let skiData = {
 }
 
 class SkiDayCounter extends React.Component {
+    getPercent = decimal => {
+        return decimal * 100 + "%";
+    }
+
+    calcGoalProgress = (total, goal )=>{
+        return this.getPercent(total/goal);
+    }
              
            
     render() {
@@ -27,6 +34,9 @@ class SkiDayCounter extends React.Component {
                 </div>
                 <div>
                     <p> Goal:{goal}  </p>
+                </div>
+                <div>
+                    <p> Goal Progress:{this.calcGoalProgress(total, goal)}  </p>
                 </div>
             </section>
 
