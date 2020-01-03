@@ -20,14 +20,40 @@ const Book = ({ title, author, page }) => {
     )
 }
 
-const Library = ({books}) => {
-    return (
-             <div>
-           {books.map(book=><Book title = {book.title} author = {book.author} page= {book.page} />
-           )}
-             </div>
-    )
+
+class Library extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            isOpen:false
+        }
+    }
+
+       render(){
+           const {books} = this.props;
+           
+           return(
+          
+               <div>
+               <h2>The library is {this.state.isOpen? "open.": "closed."}</h2>
+               {books.map(
+                   (book, i)=> <Book key = {i} title = {book.title}
+                                author={book.author}
+                                page= {book.page}
+                                />
+
+                
+                )}
+
+               </div>
+
+           )
+       
+
+
+     }
 }
+
 
 
 ReactDOM.render(
